@@ -82,18 +82,24 @@ const PRODUCTS = [
 ];
 
 const FAMILIES = [
-  'Hambuerguesas',
-  'Chivitos',
-  'Panchos',
+  'Hamburguesa',
+  'Chivito',
+  'Pancho',
   'Pizzas'
 ];
+
+let family = ""
+let precio = 0
+
+const products = document.querySelector(".products");
+
 
 const printProduct = (Products) => {
 
 
   for (const Product of Products) {
 
-    const products = document.querySelector(".products");
+    /* const products = document.querySelector(".products"); */
     const divProduct = document.createElement("div");
 
     const divImgProduct = document.createElement("div");
@@ -179,9 +185,28 @@ const createFilterFamily = () => {
     selectFamily.append(option);
   }
 
+  selectFamily.addEventListener("change", (e) => {
+    family = e.target.value;
+    filterProduct(family);
+  });
+
 }
 createFilterFamily();
 
+
+const filterProduct = (selectedFamily) => {
+
+  const FILTERED = [];
+
+  for (const product of PRODUCTS) {
+
+    if (product.Family === selectedFamily) {
+      FILTERED.push(product);
+    }
+  }
+  products.innerHTML = "";
+  printProduct(FILTERED);
+}
 
 const createFilterPrice = () => {
 
@@ -230,7 +255,8 @@ const createCleanButton = () => {
 }
 createCleanButton();
 
-const filterByFamily = (e) => {
+
+/* const filterByFamily = (e) => {
   const filteringFamily = [...PRODUCTS];
   let Selected = e.target.value;
 
@@ -239,7 +265,8 @@ const filterByFamily = (e) => {
   })
   printProduct(productByFamily);
 
-}
+} */
+
 
 const cleanFilter = () => {
 
@@ -247,4 +274,3 @@ const cleanFilter = () => {
 
 const optionSelect = document.querySelector("#familyService");
 optionSelect.addEventListener('change', filterByFamily);
-

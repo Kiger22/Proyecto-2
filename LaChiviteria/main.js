@@ -89,7 +89,7 @@ const FAMILIES = [
 ];
 
 let family = ""
-let precio = 0
+let price = 0
 
 const products = document.querySelector(".products");
 
@@ -163,6 +163,8 @@ const printProduct = (Products) => {
 printProduct(PRODUCTS);
 
 
+
+
 const createFilterFamily = () => {
 
   const aside = document.querySelector(".Services")
@@ -208,6 +210,11 @@ const filterProduct = (selectedFamily) => {
   printProduct(FILTERED);
 }
 
+const optionSelect = document.querySelector("#familyService");
+optionSelect.addEventListener('change', filterByFamily);
+
+
+
 const createFilterPrice = () => {
 
   const aside = document.querySelector(".Services")
@@ -240,6 +247,8 @@ const createFilterPrice = () => {
 createFilterPrice();
 
 
+
+
 const createCleanButton = () => {
 
   const aside = document.querySelector(".Services");
@@ -255,22 +264,8 @@ const createCleanButton = () => {
 }
 createCleanButton();
 
-
-/* const filterByFamily = (e) => {
-  const filteringFamily = [...PRODUCTS];
-  let Selected = e.target.value;
-
-  const productByFamily = filteringFamily.filter((product) => {
-    return product.Family === Selected;
-  })
-  printProduct(productByFamily);
-
-} */
-
-
 const cleanFilter = () => {
 
 }
 
-const optionSelect = document.querySelector("#familyService");
-optionSelect.addEventListener('change', filterByFamily);
+

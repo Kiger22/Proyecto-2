@@ -264,6 +264,5 @@ const createCleanButton = () => {
 }
 createCleanButton();
 
-const cleanButton = document.querySelector()
 
 

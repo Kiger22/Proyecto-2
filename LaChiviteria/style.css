@@ -34,12 +34,12 @@
   --kg-family-font-tertiary: 'Volkhov', serif;
  
   /* FONT SIZES */
-  --kg-font-size-h1: 3.2em;
-  --kg-font-size-h2: 2.15em;
-  --kg-font-size-h3: 1.3em;
-  --kg-font-size-h4: 0.7em;
-  --kg-font-size-text: 1.1em;
-  --kg-font-size-link: 0.9em;
+  --kg-font-size-h1: 2.5em;
+  --kg-font-size-h2: 1.8em;
+  --kg-font-size-h3: 1.1em;
+  --kg-font-size-h4: 0.5em;
+  --kg-font-size-text: 0.9em;
+  --kg-font-size-link: 0.7em;
 
   /* SPACINGS */
   --kg-margin-xs: 10px;
@@ -147,7 +147,7 @@ header{
 }
 
 .logoHeader{
-  width: 400px;
+  width: 250px;
 }
 
 a:hover, a:active, a:focus {
@@ -163,7 +163,7 @@ a:hover, a:active, a:focus {
 .menuPrincipal{
   justify-content: space-between;
   width: 100%;
-  gap: var(--kg-gap-xxl);
+  gap: var(--kg-gap-xl);
   
 }
 
@@ -220,13 +220,13 @@ a:hover, a:active, a:focus {
 }
 
 .User{
-  font-size: var(--kg-font-size-link);
+  font-size: var(--kg-font-size-text);
   font-weight: 900;
 }
 
 #lang{
   font-weight: 900;
-  font-size: var(--kg-font-size-text);
+  font-size: var(--kg-font-size-link);
   background-color: transparent;
 }
 
@@ -261,21 +261,20 @@ a:hover, a:active, a:focus {
   justify-content: start;
   gap: var(--kg-gap-s);
   height: 65svh;
-  width: 30svw;
-  margin-left: 60px;
+  width: 33svw;
 }
 
 .Tagline {
   color: var(--kg-text-color-secondary);
   text-transform: uppercase;
   font-weight:bold;
-  font-size: large;
+  font-size: small;
   text-shadow: -1px -1px 1px var(--kg-text-color-secondary);
 }
 
 .herocontent > h1{
   font-family: var(--kg-family-font-tertiary);
-  font-size: var(--kg-font-size-h1);
+  font-size: var(--kg-font-size-h2);
 }
 
 .herocontent > p{
@@ -288,7 +287,7 @@ a:hover, a:active, a:focus {
 .CTA{
   display: flex;
   flex-wrap: wrap;
-  gap: var(--kg-gap-xl);
+  gap: var(--kg-gap-l);
 }
 
 .Play{
@@ -314,7 +313,7 @@ a:hover, a:active, a:focus {
 }
 
 #play{
-  width: 60px;
+  width: 50px;
   cursor: pointer;
 }
 
@@ -325,9 +324,9 @@ a:hover, a:active, a:focus {
 
 .imgPrincipal{
    height:55svh;
-   width:60svw;
+   width:55svw;
    position: absolute;
-   right: -20px;
+   right: -10px;
    z-index: 2;
 }
 
@@ -335,17 +334,17 @@ a:hover, a:active, a:focus {
 
 .Products{
   background-color:var(--kg-card-background) ;
-  grid-template-columns: 1.1fr 3fr;
+  grid-template-columns: 1fr 3fr;
   justify-content: center;
   align-items: start;
 }
 
 .productsTitles > h3{
-  font-size: var(--kg-font-size-h2);
+  font-size: var(--kg-font-size-h3);
 }
 
 .productsTitles > h2{
-  font-size: var(--kg-font-size-h1);
+  font-size: var(--kg-font-size-h2);
 }
 
                     /* SERVICIOS (FAMILY) */
@@ -355,7 +354,7 @@ a:hover, a:active, a:focus {
   flex-direction: column;
   margin-top: var(--kg-margin-l);
   padding-top: var(--kg-padding-l);
-  height: 90%;
+  height: 95%;
 }
 
 .Titles{
@@ -413,7 +412,7 @@ option {
 
 .Card > img{
   grid-column: 1/2;
-  width: 4svw;
+  width: svw;
   height: 8svh;
   border-radius: var(--rtc-border-radiusII);
 }
@@ -441,6 +440,10 @@ option {
 .products{
   flex-wrap: wrap;
   gap: var(--kg-gap-xxl);
+}
+
+.productsTitles{
+  margin-top: 30px;
 }
 
 .cardProduct{
@@ -477,12 +480,12 @@ option {
 }
 
 .Name{
-  font-size: var(--kg-font-size-h3);
+  font-size: var(--kg-font-size-text);
   padding: var(--kg-padding-xs);
 }
 
 .Ingredients{
-  font-size: var(--kg-font-size-h4);
+  font-size: var(--kg-font-size-link);
   margin-bottom: var(--kg-margin-s);
 }
 
@@ -552,6 +555,7 @@ option {
   justify-items: start;
   align-items: start;
   height: 100svh;
+  margin-top: 40px;
 }
 
 .Testimonials > article > h2{
@@ -587,7 +591,7 @@ option {
   font-family: var(--kg-family-font-secondary);
   width: 70%;
   color: var(--kg-text-color-primary);
-  font-size: var(--kg-font-size-h3);
+  font-size: var(--kg-font-size-text);
   font-weight: 600;
 }
 

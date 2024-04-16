@@ -1,7 +1,7 @@
 const PRODUCTS = [
   {
     name: 'Completo',
-    price: 8.50,
+    price: 3.50,
     stars: 3,
     ingredients: "Lechuga, Tomate, Jamon, Huevo frito",
     Family: 'Chivito',
@@ -9,7 +9,7 @@ const PRODUCTS = [
   },
   {
     name: 'Comun',
-    price: 8.50,
+    price: 9.50,
     stars: 2,
     ingredients: "",
     Family: 'Chivito',
@@ -17,7 +17,7 @@ const PRODUCTS = [
   },
   {
     name: 'X2',
-    price: 8.50,
+    price: 5.50,
     stars: 5,
     ingredients: "",
     Family: 'Chivito',
@@ -33,7 +33,7 @@ const PRODUCTS = [
   },
   {
     name: 'Especial',
-    price: 8.50,
+    price: 2.50,
     stars: 3,
     ingredients: "",
     Family: 'Pancho',
@@ -41,7 +41,7 @@ const PRODUCTS = [
   },
   {
     name: 'Margarita',
-    price: 8.50,
+    price: 11.50,
     stars: 4,
     ingredients: "",
     Family: 'Pizzas',
@@ -49,7 +49,7 @@ const PRODUCTS = [
   },
   {
     name: 'Completa',
-    price: 8.50,
+    price: 10.50,
     stars: 4,
     ingredients: "",
     Family: 'Hamburguesa',
@@ -57,7 +57,7 @@ const PRODUCTS = [
   },
   {
     name: 'Completa',
-    price: 8.50,
+    price: 9.50,
     stars: 4,
     ingredients: "",
     Family: 'Hamburguesa',
@@ -65,7 +65,7 @@ const PRODUCTS = [
   },
   {
     name: 'Completa',
-    price: 8.50,
+    price: 7.50,
     stars: 4,
     ingredients: "",
     Family: 'Hamburguesa',
@@ -73,7 +73,7 @@ const PRODUCTS = [
   },
   {
     name: 'Completa',
-    price: 8.50,
+    price: 3.50,
     stars: 4,
     ingredients: "",
     Family: 'Hamburguesa',
@@ -210,9 +210,6 @@ const filterProduct = (selectedFamily) => {
   printProduct(FILTERED);
 }
 
-const optionSelect = document.querySelector("#familyService");
-optionSelect.addEventListener('change', filterByFamily);
-
 
 
 const createFilterPrice = () => {
@@ -246,6 +243,20 @@ const createFilterPrice = () => {
 }
 createFilterPrice();
 
+const selectByPrice = (PRODUCTS, maxPrice) => {
+  const filterProducts = PRODUCTS.filter(product => product.price <= maxPrice);
+
+  printProduct(filterProducts);
+};
+
+const filterByPrice = document.querySelector(".inButton");
+filterByPrice.addEventListener('click', () => {
+  const priceFilter = document.querySelector(".inputPrice");
+  const maxPrice = priceFilter.value;
+
+  selectByPrice(PRODUCTS, maxPrice);
+});
+
 
 
 
@@ -263,6 +274,8 @@ const createCleanButton = () => {
   aside.insertBefore(buttonClean, cleanFilter);
 }
 createCleanButton();
+
+/* const cleanFilter */
 
 
 

@@ -375,7 +375,7 @@ a:hover, a:active, a:focus {
   border: none ;
   height: 40px;
   padding: 5px;
-  width: 200px;
+  width: 100px;
   overflow: hidden;
   background-color: var(--kg-card-background) ;
   font-size: var(--kg-font-size-text);

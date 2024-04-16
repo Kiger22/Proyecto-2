@@ -1,3 +1,4 @@
+// Array de Productos
 const PRODUCTS = [
   {
     name: 'Completo',
@@ -81,6 +82,7 @@ const PRODUCTS = [
   },
 ];
 
+// conjunto de familias de productos
 const FAMILIES = [
   'Hamburguesa',
   'Chivito',
@@ -91,11 +93,11 @@ const FAMILIES = [
 let family = ""
 let price = 0
 
+
+// Seccion de Productos
 const products = document.querySelector(".products");
 
-
 const printProduct = (Products) => {
-
 
   for (const Product of Products) {
 
@@ -158,13 +160,12 @@ const printProduct = (Products) => {
     divStarsProduct.classList.add("flex-container");
 
   }
-
 }
 printProduct(PRODUCTS);
 
 
 
-
+//Filtro por familia de productos
 const createFilterFamily = () => {
 
   const aside = document.querySelector(".Services")
@@ -195,7 +196,6 @@ const createFilterFamily = () => {
 }
 createFilterFamily();
 
-
 const filterProduct = (selectedFamily) => {
 
   const FILTERED = [];
@@ -211,7 +211,7 @@ const filterProduct = (selectedFamily) => {
 }
 
 
-
+//Filtro por Precio
 const createFilterPrice = () => {
 
   const aside = document.querySelector(".Services")
@@ -246,10 +246,12 @@ createFilterPrice();
 const selectByPrice = (PRODUCTS, maxPrice) => {
   const filterProducts = PRODUCTS.filter(product => product.price <= maxPrice);
 
+  products.innerHTML = "";
   printProduct(filterProducts);
 };
 
-const filterByPrice = document.querySelector(".inButton");
+const filterByPrice = document.querySelector("#buttonPrice");
+
 filterByPrice.addEventListener('click', () => {
   const priceFilter = document.querySelector(".inputPrice");
   const maxPrice = priceFilter.value;
@@ -259,7 +261,7 @@ filterByPrice.addEventListener('click', () => {
 
 
 
-
+// Limpiar el filtrado
 const createCleanButton = () => {
 
   const aside = document.querySelector(".Services");
@@ -267,7 +269,7 @@ const createCleanButton = () => {
 
   const buttonClean = document.createElement("button");
   buttonClean.id = "buttonClean";
-  buttonClean.className = "inButton";
+  buttonClean.className = "cleanButton";
   buttonClean.textContent = "Limpiar busqueda";
   buttonClean.type = "button";
 
@@ -275,7 +277,13 @@ const createCleanButton = () => {
 }
 createCleanButton();
 
-/* const cleanFilter */
+const filterClean = document.querySelector(".cleanButton");
+
+filterClean.addEventListener('click', () => {
+  products.innerHTML = "";
+  printProduct(PRODUCTS);
+});
+
 
 
 
